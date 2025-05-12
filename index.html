@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopify Themes Clone</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <p>Shopify Themes Clone</p>
+        <p>This website is designed by Sagar Kumar</p>
+    </nav>
+    <main class="product-page">
+
+        <!-- Product Gallery -->
+        <section class="gallery">
+            <div class="main-image">
+                <img id="mainProductImage" src="assets/images/product1.jpg" alt="Main Product" />
+            </div>
+            <div class="thumbnails" id="thumbnailContainer"></div>
+        </section>
+
+        <!-- Product Info & Variants -->
+        <section class="product-info">
+            <h1 class="product-title">Classic T-Shirt</h1>
+            <p class="product-price">$39.99</p>
+
+            <!-- Color Swatches -->
+            <div class="variants">
+                <label>Color:</label>
+                <div class="color-options" id="colorOptions"></div>
+            </div>
+
+            <!-- Size Options -->
+            <div class="variants">
+                <label for="sizeSelect">Size:</label>
+                <select class="sizeOption" id="sizeSelect">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+                <button class="btn" id="sizeChartBtn">Size Chart</button>
+            </div>
+
+            <!-- Compare Colours -->
+            <button class="btn" id="compareColorsBtn">Compare Colours</button>
+            <button class="btn btn1 add-to-cart">Add to Cart</button>
+        </section>
+
+        <!-- Modals -->
+        <div id="modalOverlay" class="modal-overlay hidden"></div>
+
+        <!-- Size Chart Modal -->
+        <div id="sizeChartModal" class="modal hidden">
+            <button class="btn close-modal">×</button>
+            <h2>Size Chart</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Size</th>
+                        <th>Chest (in)</th>
+                        <th>Length (in)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>S</td>
+                        <td>34–36</td>
+                        <td>27</td>
+                    </tr>
+                    <tr>
+                        <td>M</td>
+                        <td>38–40</td>
+                        <td>28</td>
+                    </tr>
+                    <tr>
+                        <td>L</td>
+                        <td>42–44</td>
+                        <td>29</td>
+                    </tr>
+                    <tr>
+                        <td>XL</td>
+                        <td>46–48</td>
+                        <td>30</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Compare Colours Modal -->
+        <div id="compareColorsModal" class="modal hidden">
+            <button class="btn close-modal">×</button>
+            <h2>Compare Colours</h2>
+            <div id="compareSwatches"></div>
+        </div>
+
+        <!-- Pair Well With Section -->
+        <section class="pair-well-with">
+            <h2>Pair Well With</h2>
+            <div class="product-carousel">
+                <div class="product-card">
+                    <img src="assets/images/pair1.jpg" alt="Matching Jeans">
+                    <p>Matching Jeans</p>
+                    <span>$49.99</span>
+                    <button class="btn btn1">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="assets/images/pair2.jpg" alt="Sneakers">
+                    <p>Sneakers</p>
+                    <span>$59.99</span>
+                    <button class="btn btn1">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <img src="assets/images/pair3.jpg" alt="Jacket">
+                    <p>Jacket</p>
+                    <span>$89.99</span>
+                    <button class="btn btn1">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Bundle Section -->
+        <section class="product-bundle">
+            <h2>Frequently Bought Together</h2>
+            <div class="bundle-items">
+                <div class="bundle-product">
+                    <img src="assets/images/product1.jpg" alt="Classic T-Shirt">
+                    <p>Classic T-Shirt</p>
+                    <span>$39.99</span>
+                </div>
+                <div class="bundle-product">
+                    <img src="assets/images/pair1.jpg" alt="Matching Jeans">
+                    <p>Matching Jeans</p>
+                    <span>$49.99</span>
+                </div>
+                <div class="bundle-product">
+                    <img src="assets/images/pair2.jpg" alt="Sneakers">
+                    <p>Sneakers</p>
+                    <span>$59.99</span>
+                </div>
+            </div>
+            <div class="bundle-total">
+                <strong>Total: $149.97</strong>
+                <button class="btn btn2">Add Bundle to Cart</button>
+            </div>
+        </section>
+
+        <!-- Tabs Section -->
+        <span class="down">
+            <section class="tabs" aria-label="Product Details Tabs">
+                <div class="tab-buttons" role="tablist">
+                    <button class="btn active" data-tab="description" role="tab" aria-selected="true"
+                        aria-controls="description">Description</button>
+                    <button class="btn" data-tab="info" role="tab" aria-selected="false" aria-controls="info">Product
+                        Information</button>
+                    <button class="btn" data-tab="shipping" role="tab" aria-selected="false"
+                        aria-controls="shipping">Shipping Details</button>
+                </div>
+                <div id="description" class="tab-content active" role="tabpanel" aria-labelledby="description">
+                    <p>This is a premium-quality classic T-shirt made with 100% organic cotton. Soft, durable, and
+                        designed for all-day comfort.</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam rerum non alias, optio harum
+                        exercitationem veniam aspernatur nisi voluptas sed perferendis facilis autem iusto voluptatem
+                        iste aliquid repudiandae doloremque, necessitatibus maiores, hic ipsum nobis accusantium.
+                        Aspernatur iusto expedita corrupti cupiditate excepturi, repudiandae blanditiis eos dolores
+                        error fugit placeat accusantium similique debitis, unde sit reprehenderit, ratione qui esse eum
+                        vitae illum vero voluptates. Odio dicta totam deleniti minus labore. Libero tempore quisquam
+                        recusandae maiores illo. Quae illum non, ipsa dolore aliquid doloribus fugit in qui animi
+                        dolores dolorum excepturi sequi distinctio exercitationem ullam sit accusantium corporis,
+                        adipisci sunt obcaecati quasi perferendis eligendi voluptatum. Assumenda modi, porro dolore
+                        reprehenderit amet eligendi laboriosam maxime consequatur id ipsum ad corrupti enim rerum nam
+                        libero illo voluptatum consectetur quo distinctio debitis quod! Ad sunt quam placeat saepe
+                        accusantium quis voluptas, tenetur magni cumque aliquam accusamus quibusdam commodi delectus,
+                        sint voluptate ratione amet dolorum ea magnam nihil. Velit fuga eveniet nihil amet sit, in harum
+                        itaque totam hic quos laudantium saepe porro et quas molestiae perferendis iusto nam nostrum
+                        corporis. Natus voluptatum quis id in laboriosam dolores soluta itaque nam expedita modi quas
+                        illum aut consequuntur quisquam quia necessitatibus, molestias, veritatis ipsa cum ipsum sint
+                        placeat?</p>
+                </div>
+                <div id="info" class="tab-content" role="tabpanel" aria-labelledby="info">
+                    <p>Available sizes: S, M, L, XL<br> Colors: Red, Blue, Green, Black</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam impedit dolor ratione ullam, blanditiis sed officia quo adipisci, soluta, animi explicabo aut rem. Ducimus assumenda dignissimos tempore, quia velit quisquam libero soluta quas laborum, maxime fugiat? Maiores placeat nisi vero unde itaque laudantium deleniti quisquam sint sit et inventore, voluptates minus suscipit consequuntur harum, asperiores corporis voluptas nulla nemo id. Sed vel, ducimus error expedita labore deserunt cumque laboriosam ipsam consequatur officiis ipsa mollitia rem molestiae atque et eaque, soluta voluptatibus repudiandae in. Accusantium laudantium enim molestias repellendus optio et libero impedit nihil ex. Amet aut quia suscipit deserunt ab possimus quo similique. Ducimus repudiandae quia neque consequatur, eligendi modi natus quam quo obcaecati eius velit tempora sapiente! Temporibus, non ipsam molestiae veniam, omnis tempore incidunt culpa quis recusandae perspiciatis sit dolorem? Explicabo odit, vel impedit asperiores ducimus veritatis nihil omnis mollitia error aut recusandae aperiam libero tenetur consectetur molestias?</p>
+                </div>
+                <div id="shipping" class="tab-content" role="tabpanel" aria-labelledby="shipping">
+                    <p>Ships within 2-3 business days. Free returns within 30 days of purchase.</p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam modi suscipit neque a in, rem nulla libero optio ipsa veritatis quis dignissimos magni deleniti voluptatibus voluptatem atque, aspernatur accusamus ad facilis dolorum assumenda, totam repellat! Eos beatae commodi, quisquam incidunt dolores suscipit molestiae iste, ab dolorum labore esse, nihil unde rem sed? Aut, in aspernatur eos rerum eveniet nam dolor ut nesciunt earum vitae rem sunt, dolorem fugiat. Soluta asperiores iusto tempora, molestias dolor illo. Vero laborum eligendi quaerat, ad a sequi ipsum pariatur praesentium numquam, excepturi quidem cum delectus fugit ut voluptatem explicabo ea adipisci enim voluptatum? Deleniti quaerat, dolorem quos obcaecati illum, sequi minus voluptates provident aperiam temporibus itaque velit incidunt est minima voluptatem hic reiciendis accusamus tenetur expedita modi et recusandae magni soluta dicta? Commodi, minus. Nesciunt consequuntur totam maxime nihil, autem repellat quis esse excepturi voluptas. Voluptatem rem odit omnis eaque commodi, architecto, rerum voluptates consequuntur provident harum non ad, quo in aperiam facilis placeat cupiditate! Alias eum rerum sint laborum quasi obcaecati incidunt, inventore nisi doloribus hic cumque voluptatibus similique quidem nemo quo ratione? Expedita, odio? Possimus optio, illo nulla esse beatae hic ea, placeat tempore quaerat sapiente provident eius molestiae eaque praesentium perferendis reiciendis.</p>
+                </div>
+            </section>
+
+            <!-- Related Products Section -->
+            <section class="related-products" aria-label="Related Products">
+                <div class="product-card">
+                    <span class="badge">New</span>
+                    <img src="assets/images/related1.jpg" alt="Sport Shorts - New">
+                    <p>Sport Shorts</p>
+                    <span>$27.99</span>
+                    <button class="btn btn1">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="badge">Popular</span>
+                    <img src="assets/images/related2.jpg" alt="Canvas Cap - Popular">
+                    <p>Canvas Cap</p>
+                    <span>$12.99</span>
+                    <button class="btn btn1">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="badge">New</span>
+                    <img src="assets/images/related3.jpg" alt="Socks (Pack of 3)">
+                    <p>Socks (Pack of 3)</p>
+                    <span>$6.99</span>
+                    <button class="btn btn1">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                    <span class="badge">Popular</span>
+                    <img src="assets/images/related4.jpg" alt="Everyday Hoodie">
+                    <p>Everyday Hoodie</p>
+                    <span>$59.99</span>
+                    <button class="btn btn1">Add to Cart</button>
+                </div>
+            </section>
+        </span>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

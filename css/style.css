@@ -1,0 +1,321 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+body {
+  margin: 0;
+  font-family: "Poppins", serif;
+  
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.navbar{
+  padding: 1px;
+  margin: 0px;
+  color: white;
+  font-weight: 600;
+  background-color: blueviolet;
+  position: sticky;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar p {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.product-page {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.gallery {
+  flex: 1 1 40%;
+  padding: 1rem;
+}
+
+.main-image img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.main-image img.zoom {
+  transform: scale(1.1);
+  cursor: zoom-in;
+}
+
+.thumbnails {
+  display: flex;
+  overflow-x: auto;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.thumbnails img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  flex-shrink: 0;
+}
+
+.thumbnails img.selected {
+  border-color: #333;
+}
+
+.product-info {
+  flex: 1 1 60%;
+  padding: 1rem;
+}
+
+.product-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #e91e63;
+}
+
+.variants {
+  margin: 1rem 0;
+}
+
+.color-options {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.color-options .swatch {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.2s;
+}
+
+.color-options .swatch:hover {
+  transform: scale(1.1);
+}
+
+.color-options .swatch.selected {
+  border-color: #000;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #333;
+  color: white;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.btn{
+  font-family: "Poppins", serif;
+}
+
+.sizeOption{
+  max-width: fit-content;
+  font-family: "Poppins", serif;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.modal {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 90%;
+  max-height: 80%;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.modal.hidden,
+.modal-overlay.hidden {
+  display: none;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  color: #000;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: none;
+}
+
+.product-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.product-card {
+  flex: 0 0 auto;
+  width: 180px;
+  background: #f3f3f3;
+  border-radius: 8px;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.product-card img {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.bundle-items {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.bundle-product {
+  flex: 1 1 30%;
+  text-align: center;
+}
+
+.bundle-product img {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.bundle-total {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.down{
+  width: 100%;
+}
+
+.tabs {
+  margin: 2rem 0;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tab-buttons button {
+  background-color: #eee;
+  color: #333;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+.tab-buttons button.active {
+  background-color: #333;
+  color: white;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.related-products {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  
+}
+
+.related-products .product-card {
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  
+}
+
+.related-products .badge {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background-color: #e91e63;
+  color: #fff;
+  font-size: 0.75rem;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+
+  .product-page {
+    flex-direction: column;
+  }
+
+  .main-image img {
+    max-height: 400px;
+  }
+
+  .thumbnails img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .bundle-items {
+    flex-direction: column;
+  }
+
+  .bundle-product {
+    flex: 1 1 100%;
+  }
+}
